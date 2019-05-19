@@ -1,0 +1,2 @@
+Default 	default.png
+Airou		airou.png

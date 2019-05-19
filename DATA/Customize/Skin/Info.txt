@@ -1,0 +1,15 @@
+Default 	default.png
+Bronze		bronze.png
+Silver		silver.png
+Gold		gold.png
+Platinum	platinum.png
+Airou		airou.png
+Burn		default.png
+Collision 	default.png
+Wizard		default.png
+Spell		default.png
+Nihil		default.png
+Tsukuyomi	default.png
+Susanoo		default.png
+Amaterasu	default.png
+Izanagi		default.png

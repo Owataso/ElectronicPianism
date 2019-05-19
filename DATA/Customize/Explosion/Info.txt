@@ -1,0 +1,13 @@
+Default 	default.png
+Plasma 		plasma.png
+PlasmaBall	plasma_ball.png
+Airou		airou.png
+Burn		spell.png
+Collision	Collision.png
+Wizard		spell.png
+Spell		spell.png
+Nihil		spell.png
+TSUKUYOMI	tsukuyomi.png
+Susanoo		spell.png
+Amaterasu	spell.png
+Izanagi		spell.png

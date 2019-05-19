@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B2BA2C9B-EA21-4CD6-A1C5-83BB98F309CB}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>DirectX</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(DXSDK_DIR)Include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(DXSDK_DIR)Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(DXSDK_DIR)Include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <LibraryPath>$(DXSDK_DIR)Lib\x86;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>
+      </SDLCheck>
+      <AdditionalIncludeDirectories>./TDN/;./SOURCE/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>Strmiids.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OptimizeReferences>
+      </OptimizeReferences>
+      <EnableCOMDATFolding>
+      </EnableCOMDATFolding>
+      <LinkTimeCodeGeneration>
+      </LinkTimeCodeGeneration>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <IgnoreSpecificDefaultLibraries>libcmt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <AdditionalOptions>/NODEFAULTLIB:LIBCMTD.LIB %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalLibraryDirectories>./TDN/</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>
+      </FunctionLevelLinking>
+      <IntrinsicFunctions>false</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>
+      </SDLCheck>
+      <AdditionalIncludeDirectories>./TDN/;./SOURCE/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>Strmiids.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <AdditionalLibraryDirectories>./TDN/</AdditionalLibraryDirectories>
+      <AdditionalOptions>/NODEFAULTLIB:LIBCMTD.LIB %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="source\Data\EditData.cpp" />
+    <ClCompile Include="source\Data\GameScore.cpp" />
+    <ClCompile Include="source\Data\MusicDataBase.cpp" />
+    <ClCompile Include="source\Data\PlayerData.cpp" />
+    <ClCompile Include="source\Data\CustomizeData.cpp" />
+    <ClCompile Include="source\Data\SelectMusicData.cpp" />
+    <ClCompile Include="source\Effect\KeyboardGuide.cpp" />
+    <ClCompile Include="source\Fade\Fade.cpp" />
+    <ClCompile Include="source\Input\InputMIDI.cpp" />
+    <ClCompile Include="source\Judge\Gauge.cpp" />
+    <ClCompile Include="source\Judge\JudgeAction.cpp" />
+    <ClCompile Include="source\Judge\Judge.cpp" />
+    <ClCompile Include="source\MIDI_Loader\MIDI_Loader.cpp" />
+    <ClCompile Include="source\Mode\ModeManager.cpp" />
+    <ClCompile Include="source\Music\MusicInfo.cpp" />
+    <ClCompile Include="source\Music\PlayCursor.cpp" />
+    <ClCompile Include="source\Music\Note.cpp" />
+    <ClCompile Include="source\Music\OMS_Loader.cpp" />
+    <ClCompile Include="source\Music\Soflan.cpp" />
+    <ClCompile Include="source\Number\Number.cpp" />
+    <ClCompile Include="source\Player\Player.cpp" />
+    <ClCompile Include="source\Scene\DebugRoom.cpp" />
+    <ClCompile Include="source\Scene\sceneClassSelect.cpp" />
+    <ClCompile Include="source\Scene\sceneCustomize.cpp" />
+    <ClCompile Include="source\Scene\sceneEdit.cpp" />
+    <ClCompile Include="source\Scene\sceneEnding.cpp" />
+    <ClCompile Include="source\Scene\sceneEntry.cpp" />
+    <ClCompile Include="source\Scene\sceneLoading.cpp" />
+    <ClCompile Include="source\Scene\sceneModeSelect.cpp" />
+    <ClCompile Include="source\Scene\sceneMusicSelect.cpp" />
+    <ClCompile Include="source\Scene\sceneOption.cpp" />
+    <ClCompile Include="source\Scene\scenePlaying.cpp" />
+    <ClCompile Include="source\Scene\scenePlayingState.cpp" />
+    <ClCompile Include="source\Scene\sceneRecord.cpp" />
+    <ClCompile Include="source\Scene\sceneResult.cpp" />
+    <ClCompile Include="source\Scene\sceneTitle.cpp" />
+    <ClCompile Include="source\Scene\sceneTutorial.cpp" />
+    <ClCompile Include="source\UI\ui.cpp" />
+    <ClCompile Include="TDN\DirectShow\baseclasses\amfilter.cpp" />
+    <ClCompile Include="TDN\DirectShow\baseclasses\ctlutil.cpp" />
+    <ClCompile Include="TDN\DirectShow\baseclasses\renbase.cpp" />
+    <ClCompile Include="TDN\TDN_2DAnim.cpp" />
+    <ClCompile Include="TDN\TDN_Archiver.cpp" />
+    <ClCompile Include="TDN\TDN_Audio.cpp" />
+    <ClCompile Include="TDN\TDN_2DObj.cpp" />
+    <ClCompile Include="TDN\TDN_File.cpp" />
+    <ClCompile Include="TDN\TDN_Font.cpp" />
+    <ClCompile Include="TDN\TDN_Input.cpp" />
+    <ClCompile Include="TDN\TDN_Math.cpp" />
+    <ClCompile Include="TDN\TDN_Movie.cpp" />
+    <ClCompile Include="TDN\TDN_Polygon.cpp" />
+    <ClCompile Include="TDN\TDN_Random.cpp" />
+    <ClCompile Include="TDN\TDN_RenderState.cpp" />
+    <ClCompile Include="TDN\TDN_Shader.cpp" />
+    <ClCompile Include="TDN\TDN_System.cpp" />
+    <ClCompile Include="TDN\TDN_Text.cpp" />
+    <ClCompile Include="TDN\TDN_Texture.cpp" />
+    <ClCompile Include="TDN\TDN_View.cpp" />
+    <ClCompile Include="source\Sound\SoundManager.cpp" />
+    <ClCompile Include="source\system\Framework.cpp" />
+    <ClCompile Include="source\system\System.cpp" />
+    <ClCompile Include="SOURCE\system\WinMain.cpp" />
+    <ClCompile Include="TDN\TDN_Mesh.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="source\Alphabet\Alphabet.h" />
+    <ClInclude Include="source\Data\EditData.h" />
+    <ClInclude Include="source\Data\GameScore.h" />
+    <ClInclude Include="source\Data\MusicDataBase.h" />
+    <ClInclude Include="source\Data\PlayerData.h" />
+    <ClInclude Include="source\Data\CustomizeData.h" />
+    <ClInclude Include="source\Data\SelectMusicData.h" />
+    <ClInclude Include="source\Effect\CyberCircle.h" />
+    <ClInclude Include="source\Effect\KeyboardGuide.h" />
+    <ClInclude Include="source\Fade\Fade.h" />
+    <ClInclude Include="source\Input\InputMIDI.h" />
+    <ClInclude Include="source\Judge\Gauge.h" />
+    <ClInclude Include="source\Judge\JudgeAction.h" />
+    <ClInclude Include="source\Judge\Judge.h" />
+    <ClInclude Include="source\MIDI_Loader\MIDI_Loader.h" />
+    <ClInclude Include="source\Mode\ModeManager.h" />
+    <ClInclude Include="source\Music\BeatBar.h" />
+    <ClInclude Include="source\Music\EnumString.h" />
+    <ClInclude Include="source\Music\PlayCursor.h" />
+    <ClInclude Include="source\Music\MusicInfo.h" />
+    <ClInclude Include="source\Music\Note.h" />
+    <ClInclude Include="source\Music\OMS_Loader.h" />
+    <ClInclude Include="source\Music\Soflan.h" />
+    <ClInclude Include="source\Number\Number.h" />
+    <ClInclude Include="source\Player\Player.h" />
+    <ClInclude Include="source\Scene\scenePlayingState.h" />
+    <ClInclude Include="source\Window\QuestionWindow.h" />
+    <ClInclude Include="source\Scene\DebugRoom.h" />
+    <ClInclude Include="source\Scene\sceneClassSelect.h" />
+    <ClInclude Include="source\Scene\sceneCustomize.h" />
+    <ClInclude Include="source\Scene\sceneEdit.h" />
+    <ClInclude Include="source\Scene\sceneEnding.h" />
+    <ClInclude Include="source\Scene\sceneEntry.h" />
+    <ClInclude Include="source\Scene\sceneLoading.h" />
+    <ClInclude Include="source\Scene\sceneModeSelect.h" />
+    <ClInclude Include="source\Scene\sceneMusicSelect.h" />
+    <ClInclude Include="source\Scene\sceneOption.h" />
+    <ClInclude Include="source\Scene\scenePlaying.h" />
+    <ClInclude Include="source\Scene\sceneRecord.h" />
+    <ClInclude Include="source\Scene\sceneResult.h" />
+    <ClInclude Include="source\Scene\sceneTitle.h" />
+    <ClInclude Include="source\BenchMark.h" />
+    <ClInclude Include="source\Scene\sceneTutorial.h" />
+    <ClInclude Include="source\Sort\Sort.h" />
+    <ClInclude Include="source\UI\ui.h" />
+    <ClInclude Include="TDN\DirectShow\baseclasses\amextra.h" />
+    <ClInclude Include="TDN\DirectShow\baseclasses\amfilter.h" />
+    <ClInclude Include="TDN\DirectShow\baseclasses\cache.h" />
+    <ClInclude Include="TDN\DirectShow\baseclasses\checkbmi.h" />
+    <ClInclude Include="TDN\DirectShow\baseclasses\combase.h" />
+    <ClInclude Include="TDN\DirectShow\baseclasses\cprop.h" />
+    <ClInclude Include="TDN\DirectShow\baseclasses\ctlutil.h" />
+    <ClInclude Include="TDN\DirectShow\baseclasses\ddmm.h" />
+    <ClInclude Include="TDN\DirectShow\baseclasses\dllsetup.h" />
+    <ClInclude Include="TDN\DirectShow\baseclasses\dxmperf.h" />
+    <ClInclude Include="TDN\DirectShow\baseclasses\fourcc.h" />
+    <ClInclude Include="TDN\DirectShow\baseclasses\measure.h" />
+    <ClInclude Include="TDN\DirectShow\baseclasses\msgthrd.h" />
+    <ClInclude Include="TDN\DirectShow\baseclasses\mtype.h" />
+    <ClInclude Include="TDN\DirectShow\baseclasses\outputq.h" />
+    <ClInclude Include="TDN\DirectShow\baseclasses\perflog.h" />
+    <ClInclude Include="TDN\DirectShow\baseclasses\perfstruct.h" />
+    <ClInclude Include="TDN\DirectShow\baseclasses\pstream.h" />
+    <ClInclude Include="TDN\DirectShow\baseclasses\pullpin.h" />
+    <ClInclude Include="TDN\DirectShow\baseclasses\refclock.h" />
+    <ClInclude Include="TDN\DirectShow\baseclasses\reftime.h" />
+    <ClInclude Include="TDN\DirectShow\baseclasses\renbase.h" />
+    <ClInclude Include="TDN\DirectShow\baseclasses\schedule.h" />
+    <ClInclude Include="TDN\DirectShow\baseclasses\seekpt.h" />
+    <ClInclude Include="TDN\DirectShow\baseclasses\source.h" />
+    <ClInclude Include="TDN\DirectShow\baseclasses\streams.h" />
+    <ClInclude Include="TDN\DirectShow\baseclasses\strmctl.h" />
+    <ClInclude Include="TDN\DirectShow\baseclasses\sysclock.h" />
+    <ClInclude Include="TDN\DirectShow\baseclasses\transfrm.h" />
+    <ClInclude Include="TDN\DirectShow\baseclasses\transip.h" />
+    <ClInclude Include="TDN\DirectShow\baseclasses\videoctl.h" />
+    <ClInclude Include="TDN\DirectShow\baseclasses\vtrans.h" />
+    <ClInclude Include="TDN\DirectShow\baseclasses\winctrl.h" />
+    <ClInclude Include="TDN\DirectShow\baseclasses\winutil.h" />
+    <ClInclude Include="TDN\DirectShow\baseclasses\wxdebug.h" />
+    <ClInclude Include="TDN\DirectShow\baseclasses\wxlist.h" />
+    <ClInclude Include="TDN\DirectShow\baseclasses\wxutil.h" />
+    <ClInclude Include="TDN\ogg\codec.h" />
+    <ClInclude Include="TDN\ogg\ogg.h" />
+    <ClInclude Include="TDN\ogg\os_types.h" />
+    <ClInclude Include="TDN\ogg\vorbisenc.h" />
+    <ClInclude Include="TDN\ogg\vorbisfile.h" />
+    <ClInclude Include="TDN\TDNLIB.h" />
+    <ClInclude Include="source\Sound\SoundManager.h" />
+    <ClInclude Include="source\system\Framework.h" />
+    <ClInclude Include="source\system\BaseScene.h" />
+    <ClInclude Include="source\system\ItDebug.h" />
+    <ClInclude Include="source\system\System.h" />
+    <ClInclude Include="TDN\TDN_Movie.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="TDN\ogg\ogg_static.lib" />
+    <Library Include="TDN\ogg\vorbisfile_static.lib" />
+    <Library Include="TDN\ogg\vorbis_static.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="DirectX.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="icon1.ico" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

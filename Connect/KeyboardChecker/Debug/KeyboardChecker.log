@@ -1,0 +1,13 @@
+﻿2016/08/11 21:41:57 にビルドを開始しました。
+     1>ノード 2 上のプロジェクト "C:\Users\2140114.MAETEL\Desktop\VS企業\3_2 ~俺の作りたかった個人制作音ゲー~\Connect\KeyboardChecker\KeyboardChecker.vcxproj" (Build ターゲット)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Main.cpp
+         Main.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\2140114.MAETEL\Desktop\VS企業\3_2 ~俺の作りたかった個人制作音ゲー~\Connect\Debug\KeyboardChecker.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\2140114.MAETEL\Desktop\VS企業\3_2 ~俺の作りたかった個人制作音ゲー~\Connect\Debug\KeyboardChecker.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\2140114.MAETEL\Desktop\VS企業\3_2 ~俺の作りたかった個人制作音ゲー~\Connect\Debug\KeyboardChecker.lib" /MACHINE:X86 Debug\Main.obj
+         KeyboardChecker.vcxproj -> C:\Users\2140114.MAETEL\Desktop\VS企業\3_2 ~俺の作りたかった個人制作音ゲー~\Connect\Debug\KeyboardChecker.exe
+     1>プロジェクト "C:\Users\2140114.MAETEL\Desktop\VS企業\3_2 ~俺の作りたかった個人制作音ゲー~\Connect\KeyboardChecker\KeyboardChecker.vcxproj" (Build ターゲット) のビルドが完了しました。
+
+ビルドに成功しました。
+
+経過時間 00:00:02.48

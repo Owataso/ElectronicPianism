@@ -1,0 +1,17 @@
+Default 	default.png
+Cyber		default.png
+RisingWinter	default.png
+HogeI		default.png
+HogeII		default.png
+HogeIII		default.png
+Euresia		euresia.png
+Airou		airou.png
+Burn		default.png
+Collision 	default.png
+Wizard		default.png
+Spell		default.png
+Nihil		default.png
+TSUKUYOMI	tsukuyomi.png
+Susanoo		default.png
+Amaterasu	default.png
+Izanagi		default.png
