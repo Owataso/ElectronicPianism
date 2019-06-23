@@ -174,7 +174,7 @@ private:
 		class Playing :public Base
 		{
 		private:
-			NoteManager *note_mng;
+			int m_iPauseStep;
 		public:
 			Playing(sceneEdit *me) :Base(me){}
 			void Initialize();

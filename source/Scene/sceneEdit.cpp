@@ -432,10 +432,15 @@ void sceneEdit::Mode::DifficultySelect::Update()
 					sprintf_s(path, 256, "%s/Music%d.ogg", me->m_sMusicName.c_str(), me->m_iPlayMusicNo);
 					play_cursor->SetMusic(path);
 				}
+				else
+				{
+					play_cursor->SetMusic(nullptr);
+				}
 
 				break;
 			
 			case IDNO:
+				play_cursor->SetMusic(nullptr);
 				break;
 			
 			case IDCANCEL:
@@ -854,6 +859,8 @@ void sceneEdit::Mode::Playing::Initialize()
 	// Ä¶ˆÊ’u‚Ì‰Šú‰»
 	//play_cursor->Initialize();
 
+	m_iPauseStep = 0;
+
 	me->m_pUI->SetOctaveWidth(me->m_MusicInfo->omsInfo.OctaveWidth);
 
 	// Ä¶
@@ -896,7 +903,7 @@ void sceneEdit::Mode::Playing::Update()
 		return;
 	}
 
-	if (play_cursor->isEnd())
+	if (play_cursor->isEnd() && m_iPauseStep == 0)
 	{
 		play_cursor->Stop();
 		me->ChangeMode(MODE::LOAD_OK);
@@ -911,6 +918,21 @@ void sceneEdit::Mode::Playing::Update()
 		else if (KeyBoardTRG(KB_NUMPAD2))
 		{
 			play_cursor->SetSpeed((speed -= .08f));
+		}
+
+		if (KeyBoardTRG(KB_NUMPAD5))
+		{
+			switch (m_iPauseStep)
+			{
+			case 0:
+				play_cursor->Pause();
+				break;
+			case 1:
+				play_cursor->Resume();
+				break;
+			}
+			
+			if (++m_iPauseStep > 1) m_iPauseStep = 0;
 		}
 	}
 }

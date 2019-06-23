@@ -73,6 +73,28 @@ void PlayCursor::Stop()
 		m_iMSecond = m_iStart = 0;
 	}
 }
+void PlayCursor::Pause()
+{
+	if (m_bSoundPlay)
+	{
+		m_pSoundPlayer->Pause(0);
+	}
+	else
+	{
+		MessageBox(0, "音源情報がないのはPause未対応です。許してクレメンス", "エラー", MB_OK);
+	}
+}
+void PlayCursor::Resume()
+{
+	if (m_bSoundPlay)
+	{
+		m_pSoundPlayer->PauseOff(0);
+	}
+	else
+	{
+		MessageBox(0, "音源情報がないのはPause未対応です。許してクレメンス", "エラー", MB_OK);
+	}
+}
 //------------------------------------------------------
 //		現在再生位置取得
 //------------------------------------------------------

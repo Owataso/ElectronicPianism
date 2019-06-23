@@ -243,6 +243,58 @@ void SelectOption::Movie::Render()
 	}
 }
 
+SelectOption::Sound::Sound(sceneOption *pOption) :Base(pOption, 1), m_bOrgMIDISoundOn(pOption->m_pPlayerOption->bMIDISoundOn) {}
+void SelectOption::Sound::Update()
+{
+	if (m_bSettingOption)
+	{
+		if (InputMIDIMgr->GetEPInputTRG(EP_INPUT::ENTER))
+		{
+			m_pOption->m_pSE->Play(0);// 決定音再生
+			m_bSettingOption = false;
+		}
+
+		switch (m_iCursor)
+		{
+		case 0:	// MIDIピアノ音のオン・オフの設定
+			if (InputMIDIMgr->GetEPSelectInput(EP_INPUT::LEFT, 15) || InputMIDIMgr->GetEPSelectInput(EP_INPUT::RIGHT, 15))
+			{
+				g_pSE->Play("カーソル2");// カーソル音再生
+				m_pOption->m_pPlayerOption->bMIDISoundOn ^= 0x1;
+			}
+			else if (InputMIDIMgr->GetEPInputTRG(EP_INPUT::BACK))
+			{
+				g_pSE->Play("戻る");
+				m_pOption->m_pPlayerOption->bMIDISoundOn = m_bOrgMIDISoundOn.val;
+				m_bSettingOption = false;
+			}
+			break;
+		}
+
+	}
+
+	else
+	{
+		Base::UpdateCursor();
+	}
+
+}
+void SelectOption::Sound::Render()
+{
+	// カーソル描画
+	//RenderCursor();
+
+	const DWORD l_dwCol(m_bSettingOption ? 0xffffffff : 0x80ffffff);
+
+	switch (m_iCursor)
+	{
+	case 0:	// ガイドのオン・オフの設定
+		tdnText::Draw((int)FRAME_OFFSET_XY.x, (int)FRAME_OFFSET_XY.y, l_dwCol, "MIDIピアノ音のON・OFF");
+		tdnText::Draw((int)FRAME_OFFSET_XY.x, (int)FRAME_OFFSET_XY.y + 30, l_dwCol, "%s", (m_pOption->m_pPlayerOption->bMIDISoundOn ? "ON" : "OFF"));
+		break;
+	}
+}
+
 SelectOption::Guide::Guide(sceneOption *pOption) :Base(pOption, 1), m_bOrgGuide(pOption->m_pPlayerOption->bGuide){}
 void SelectOption::Guide::Update()
 {
@@ -439,6 +491,9 @@ bool sceneOption::Update()
 					break;
 				case SELECT_OPTION::GUIDE:
 					m_pSelectOption = new SelectOption::Guide(this);
+					break;
+				case SELECT_OPTION::SOUND:
+					m_pSelectOption = new SelectOption::Sound(this);
 					break;
 				}
 			}

@@ -104,7 +104,8 @@ namespace PlayerData
 		unsigned int bRegulSpeed	:1;		// レギュラースピード(ソフランなし)		
 		unsigned int bPushStartGuide:1;		// この鍵盤から始まるよ！の有り無し
 		unsigned int bShowTiming	:1;		// 判定タイミング表示
-		unsigned int Other1 : 14;			// 今後の追加を想定した空き枠
+		unsigned int bMIDISoundOn : 1;		// ピアノ音
+		unsigned int Other1 : 13;			// 今後の追加を想定した空き枠
 		unsigned int Other2 : 16;
 		unsigned int Other3 : 16;
 	};

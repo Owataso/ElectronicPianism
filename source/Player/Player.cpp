@@ -16,7 +16,7 @@
 Player::Player() :m_pInput(nullptr), m_pUI(nullptr), m_byKeyList(nullptr), m_bON(new bool[NUM_KEYBOARD])
 {
 	// MIDI‰¹ƒtƒ‰ƒOON
-	InputMIDIMgr->SetSoundOn(true);
+	InputMIDIMgr->SetSoundOn(PlayerDataMgr->m_PlayerOption.bMIDISoundOn);
 }
 
 void Player::Initialize(int iOctaveWidth, UI *Ui, NoteManager *mng_n, JudgeManager *mng_j, MODE mode)

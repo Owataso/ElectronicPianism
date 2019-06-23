@@ -14,7 +14,9 @@ bool PlayerDataManager::Initialize()
 	//return true;
 	
 	// この関数でプレイ情報を読み込み。ついでにデータがない(新規作成させる)かのboolを返す
-	return LoadPlayerData();
+	bool success = LoadPlayerData();
+
+	return success;
 }
 
 //------------------------------------------------------
@@ -38,6 +40,9 @@ m_grade(GRADE::NONE)
 	// スキン記録
 	m_CustomizeRecords = new PlayerData::CustomizeRecord*[(int)CUSTOMIZE_TYPE::MAX];
 	for (int i = 0; i < (int)CUSTOMIZE_TYPE::MAX; i++) m_CustomizeRecords[i] = new PlayerData::CustomizeRecord;
+
+	// データ初期化
+	ClearData();
 }
 
 //------------------------------------------------------
@@ -200,9 +205,6 @@ void PlayerDataManager::SavePlayerData()
 //------------------------------------------------------
 void PlayerDataManager::NewCreate(char *PlayerName)
 {
-	// 一旦全消去
-	ClearData();
-
 	// 名前登録
 	strcpy_s(m_PlayerInfo.PlayerName, 11, PlayerName);
 	//sprintf(m_PlayerInfo->PlayerName, "%s", PlayerName);
@@ -225,6 +227,7 @@ void PlayerDataManager::ClearData()
 	ZeroMemory(&m_PlayerOption, sizeof(PlayerData::OptionV2));
 	m_PlayerOption.MovieAlpha = 255;
 	m_PlayerOption.bRegulSpeed = TRUE;
+	m_PlayerOption.bMIDISoundOn = TRUE;
 
 	// 段位の空き枠クリア
 	ZeroMemory(&m_OtherData, sizeof(PlayerData::Other));

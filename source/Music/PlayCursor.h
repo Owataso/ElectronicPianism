@@ -30,6 +30,8 @@ public:
 	void SetMusic(LPSTR filename);
 	void Play(int Mlimit = 0);	// ミリ秒単位での再生時間を設定
 	void Stop();
+	void Pause();
+	void Resume();
 
 	//===============================================
 	//	アクセサ

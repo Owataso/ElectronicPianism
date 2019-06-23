@@ -69,6 +69,19 @@ namespace SelectOption
 	};
 
 	//------------------------------------------------------
+	//	音関連
+	//------------------------------------------------------
+	class Sound :public Base
+	{
+	public:
+		Sound(sceneOption *pOption);
+		void Update();
+		void Render();
+	private:
+		const Mybool m_bOrgMIDISoundOn;
+	};
+
+	//------------------------------------------------------
 	//	ガイド関連
 	//------------------------------------------------------
 	class Guide :public Base
@@ -165,6 +178,7 @@ public:
 		HI_SPEED,
 		MOVIE,
 		GUIDE,
+		SOUND,
 		MAX
 	};
 
